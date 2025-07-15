@@ -1,0 +1,3 @@
+glob
+pandas
+opencv-python
