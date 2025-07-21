@@ -93,3 +93,39 @@ def checkImageSize(path):
     width, height = img.shape[:2]
     return width <= 0 or height <= 0 or width > 1920 or height > 1920
 
+# Checking Annotation file validity
+
+def checkAnnotationFile(annotations_basenames):
+	
+	#Checking 
+	for files in annotations_basenames:
+			with open(files, "r") as f:
+				lines = f.readlines()
+				
+				if len(lines) == 0:
+						return "No lines in file"
+				
+				for i, line in enumarate(lines):
+					parts = line.strip().split()
+					if len(parts) != 5:
+						return "Annotation file is not full"
+				
+					class_id = [0]
+					dimensions = [1:]
+				
+				if type(class_id) != int:
+					return "Class is not an integer"
+				
+				try:
+					dimensions = [float(d) for d in dimensions]
+					
+				except valueError:
+					return "One or more dimensions are not correct"
+
+				if any(d<0 or d>1 for d in dimensions):
+					return "Dimensions are out of bounds"
+
+
+
+						
+					
