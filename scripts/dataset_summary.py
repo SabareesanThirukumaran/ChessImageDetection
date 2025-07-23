@@ -127,5 +127,23 @@ def checkAnnotationFile(annotations_basenames):
 
 
 
+# Checking copies in annotations or images
+
+def checkCopies(pathway):
+	allFiles = os.listdir(pathway)
+	if set(allFiles) == allFiles:
+		return "No files are copied"
+
+	else:
+		copies = []
+		for files in allFiles:
+			if count(allFiles, files) > 1:
+				copies.append(files)
+		return f"{copies} are copied"
+
+
+
+		
+
 						
 					
