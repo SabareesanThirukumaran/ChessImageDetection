@@ -105,21 +105,21 @@ def checkAnnotationFile(annotations_basenames):
 				if len(lines) == 0:
 						return "No lines in file"
 				
-				for i, line in enumarate(lines):
+				for i, line in enumerate(lines):
 					parts = line.strip().split()
 					if len(parts) != 5:
 						return "Annotation file is not full"
 				
-					class_id = [0]
-					dimensions = [1:]
+					class_id = int(parts[0])
+					dimensions = parts[1:]
 				
-				if type(class_id) != int:
+				if not isinstance(class_id, int):
 					return "Class is not an integer"
 				
 				try:
 					dimensions = [float(d) for d in dimensions]
 					
-				except valueError:
+				except ValueError:
 					return "One or more dimensions are not correct"
 
 				if any(d<0 or d>1 for d in dimensions):

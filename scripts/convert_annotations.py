@@ -35,7 +35,7 @@ for files in os.listdir(RAW_ANNOTATION_PATH):
 		json_path = os.path.join(RAW_ANNOTATION_PATH, files)
 		output_path = os.path.join(CONVERTED_ANNOTATION_PATH, files.replace(".json", ".txt"))
 		
-		image_path = os.path.join("data/raw/real", filename.replace(".json", ".jpg")
+		image_path = os.path.join("data/raw/real", files.replace(".json", ".jpg"))
 		img = cv2.imread(image_path)
 		h, w = img.shape[:2]
 
