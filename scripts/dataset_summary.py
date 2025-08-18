@@ -117,6 +117,8 @@ def checkCopies(pathway):
 			if allFiles.count(files) > 1:
 				copies.append(files)
 		return f"{copies} are copied"
+     
+print(checkCopies(realImages_fullPath))
 
 
 
