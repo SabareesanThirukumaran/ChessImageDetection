@@ -99,7 +99,7 @@ def checkAnnotationFile(annotations_folder, annotations_basenames, extension="tx
 
     return "All annotation files are valid"
 				
-annotationCheck = [checkAnnotationFile(RealannotationPath, real_annotations_basenames, extension="txt")]
+annotationCheck = [checkAnnotationFile(os.path.join("data", "processed", "real"), real_annotations_basenames, extension="txt")]
 print(annotationCheck)
 
 
