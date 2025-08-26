@@ -77,12 +77,62 @@ def checkValAnn(annPath):
         
         for i, line in enumerate(lines):
             parts = line.strip().split()
+            
+            if len(parts) < 7:
+                invalid.append([f"File {ann}, Reason : Not enoughs COORDINATES"])
+                continue
+                
+            try:
+                classId = int(parts[0])
+                coords = list(map(float, parts[1:]))
+            except ValueError:
+                invalid.append([f"File {ann}, Reason : Not Numeric NUMBER"])
+                continue
+
+            if classId < 0 or classId > 12:
+                invalid.append([f"File {ann}, Reason : Invalid CLASS"])
+
+            if len(coords) % 2 != 0:
+                invalid.append([f"File {ann}, Reason : Not EVEN"])
+
+            xCoords = coords[0::2]
+            yCoords = coords[1::2]
+
+            if not all(0 <= x <= 1 for x in xCoords):
+                invalid.append([f"File {ann}, Reason : Invalid X COORD"])
+            
+            if not all(0 <= y <= 1 for y in yCoords):
+                invalid.append([f"File {ann}, Reason : Invalid Y COORD"])
+
+    if invalid:
+        resultsValAnn.append(invalid)
+    else:
+        resultsValAnn.append("All Annotations Valid")
+    
+    return resultsValAnn 
 
 # Checking copies in annotations or images
+def checkCop(inpPath):
+    resultCOP = ["COPY CHECK"]
+    invalid = []
+    allFiles = [file for file in os.listdir(inpPath) if os.path.isfile(os.path.join(inpPath, file))]
+    for files in allFiles:
+        if allFiles.count(files) > 1:
+            invalid.append(files)
+    
+    if invalid:
+        resultCOP.append(invalid)
+    else:
+        resultCOP.append("No Copied Files")
+    
+    return resultCOP
 
-print(checkComp(testRealImg, testRealAnn))
-print(checkCorr(testRealImg))
-print(checkValImg(testRealImg))
+
+print(checkComp(validRealImg, validRealAnn))
+print(checkCorr(validRealImg))
+print(checkValImg(validRealImg))
+print(checkValAnn(validRealAnn))
+print(checkCop(validRealAnn))
 		
 
 						
