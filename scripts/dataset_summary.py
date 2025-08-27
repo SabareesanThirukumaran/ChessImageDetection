@@ -127,7 +127,6 @@ def checkCop(inpPath):
     
     return resultCOP
 
-
 print(checkComp(validRealImg, validRealAnn))
 print(checkCorr(validRealImg))
 print(checkValImg(validRealImg))
