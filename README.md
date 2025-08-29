@@ -1,6 +1,7 @@
 # ♟ Chessboard Detection with YOLOv8 🤖✨
 
 Welcome to **Chessboard Detection** – a project where AI meets chess! Train a YOLOv8 segmentation model to detect chessboards and chess pieces from images with ease. Perfect for your first computer vision project! 🖼️🧠
+Chess Board Images from Kaggle --> https://www.kaggle.com/datasets/imtkaggleteam/chess-pieces-detection-image-dataset
 
 ## 🚀 Features
 - Custom dataset of chessboard images with polygon masks ♟️
@@ -43,6 +44,9 @@ Welcome to **Chessboard Detection** – a project where AI meets chess! Train a 
 - Train longer with higher image resolution (e.g., 640px) 📏
 - Experiment with larger YOLOv8 models (m or l) for better accuracy 📈
 - Refine masks for cleaner detection ✨
+
+## Author
+Sabareesan Thirukumaran - Github / Linkedin
 
 ## 🏁 Conclusion
 This is a **first end-to-end ML project** including dataset creation, model training, inference, and visualization. A perfect foundation for advanced chessboard analysis and piece detection! ♟️🤖💡
