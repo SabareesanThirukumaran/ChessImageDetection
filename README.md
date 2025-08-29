@@ -11,7 +11,7 @@ Chess Board Images from Kaggle --> https://www.kaggle.com/datasets/imtkaggleteam
 
 ## 💻 Installation
 1. Clone the repository:
-    git clone https://github.com/YOUR-USERNAME/ChessImageDetection.git
+    git clone https://github.com/SabareesanThirukumaran/ChessImageDetection.git
 2. Navigate to project:
    cd ChessImageDetection
 3. Install dependencies:
