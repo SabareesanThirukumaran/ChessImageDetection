@@ -1,3 +1,5 @@
 glob
 pandas
 opencv-python
+ultralytics
+torch
